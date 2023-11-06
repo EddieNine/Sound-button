@@ -1,0 +1,102 @@
+body {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 2s;
+    animation: backgroundAnimation 5s ease infinite alternate;
+}
+
+
+#disco-ball {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at 50% 50%, red, blue, green);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* animation: rotate 5s linear infinite; */
+    animation: spin 5s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #000;
+    }
+    50% {
+        background-color: #333;
+    }
+    100% {
+        background-color: #000;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg);}
+    100% { transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+button {
+    background-color: #ff69b4;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    animation:  pulse 1s infinite alternate;
+    margin-right: 12px;
+    border-radius: 20px;
+}
+
+button:hover {
+    background-color: #ff1493;
+    animation: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+#lyrics-container {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    left: 90%;
+    transform: translate(0, -50%);
+    text-align: right;
+    font-size: 18px;
+    animation: lyricsUp 120s linear infinite;
+}
+
+.lyrics {
+    margin: 10px 0;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+@keyframes lyricsUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
